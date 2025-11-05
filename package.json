@@ -1,6 +1,6 @@
 {
   "name": "@schorts/driver-tour-guide",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -11,16 +11,13 @@
       "require": "./dist/cjs/index.js",
       "types": "./dist/types/index.d.ts"
     },
-    "./driver-styles": {
-      "import": "./dist/esm/driver-styles.js",
-      "require": "./dist/cjs/driver-styles.js",
-      "types": "./dist/types/driver-styles.d.ts"
-    }
+    "./driver-styles": "./dist/driver.css"
   },
   "scripts": {
     "build:cjs": "tsc --project tsconfig.cjs.json",
     "build:esm": "tsc --project tsconfig.esm.json",
-    "build": "npm run build:cjs && npm run build:esm",
+    "copy:driver-css": "cp node_modules/driver.js/dist/driver.css dist/",
+    "build": "npm run build:cjs && npm run build:esm && npm run copy:driver-css",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
