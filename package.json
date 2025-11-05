@@ -1,0 +1,57 @@
+{
+  "name": "@schorts/driver-tour-guide",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "build": "npm run build:cjs && npm run build:esm",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:ci": "jest --ci --coverage --watchAll=false"
+  },
+  "author": "Jorge Castillo (https://github.com/schorts99)",
+  "license": "LGPL-3.0-or-later",
+  "devDependencies": {
+    "@jest/globals": "^30.1.2",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.5.2",
+    "expect-type": "^1.2.2",
+    "jest": "^30.1.3",
+    "jest-html-reporter": "^4.3.0",
+    "ts-jest": "^29.4.4",
+    "typescript": "^5.9.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schorts99/driver-tour-guide.git"
+  },
+  "keywords": [
+    "tour-guide",
+    "driverjs"
+  ],
+  "bugs": {
+    "url": "https://github.com/schorts99/driver-tour-guide/issues"
+  },
+  "homepage": "https://github.com/schorts99/driver-tour-guide#readme",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@schorts/shared-kernel": "^5.2.1",
+    "driver.js": "^1.3.6"
+  }
+}
