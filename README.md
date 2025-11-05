@@ -29,7 +29,7 @@ injectDriverStyles();
 ### 2. Create and start a tour
 
 ```ts
-import { Driver, DriverTourGuide } from "@schorts/driver-tour-guide";
+import { driver, DriverTourGuide } from "@schorts/driver-tour-guide";
 import { TourStep } from "@schorts/shared-kernel";
 
 const steps: TourStep[] = [
@@ -48,7 +48,7 @@ const steps: TourStep[] = [
   },
 ];
 
-const tour = new DriverTourGuide(new Driver());
+const tour = new DriverTourGuide(driver());
 
 steps.forEach((step) => tour.addStep(step));
 
